@@ -13,11 +13,12 @@ def get_db():
         
     return g.db
 
-def close_db():
+def close_db(exc=None):
     db = g.pop('db', None)
     
     if db is not None:
         db.close
+    pass 
 
 def init_db():
     db = get_db()
